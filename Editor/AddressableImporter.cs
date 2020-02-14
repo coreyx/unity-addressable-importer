@@ -99,6 +99,12 @@ public class AddressableImporter : AssetPostprocessor
         {
             entry.address = rule.ParseAddressReplacement(assetPath);
         }
+		
+        if (rule.setAddressToLowerCase)
+            entry.address = entry.address.ToLowerInvariant();
+
+        if (rule.stripFileExtension)
+            entry.address = Path.ChangeExtension(entry.address, "").TrimEnd('.');
 
         // Add labels
         if (rule.LabelMode == LabelWriteMode.Replace)

@@ -85,6 +85,20 @@ public class AddressableImportRule
     [Tooltip("Simplify address to filename without extension.")]
     [Label("Address Simplified")]
     public bool simplified;
+	
+    /// <summary>
+    /// Set the address to lower case using the invariant culture.
+    /// </summary>
+    [Tooltip("Set the address to lower case using the invariant culture.")]
+    [Label("Set Address to Lower Case")]
+    public bool setAddressToLowerCase;
+
+	/// <summary>
+    /// Strip the file extension.
+    /// </summary>
+    [Tooltip("Strip the file extension.")]
+    [Label("Strip File Extension")]
+    public bool stripFileExtension;
 
     /// <summary>
     /// Replacement string for the asset address. This is only useful with regex capture groups.
