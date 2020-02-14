@@ -15,6 +15,9 @@ public class AddressableImportSettings : ScriptableObject
 
     [Tooltip("Removes groups without addressables except the default group.")]
     public bool removeEmtpyGroups = false;
+	
+    [Tooltip("Log new/changed entries.")]
+    public bool logEntries = false;
 
     [Tooltip("Rules for managing imported assets.")]
     public List<AddressableImportRule> rules;

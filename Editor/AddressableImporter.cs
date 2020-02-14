@@ -33,10 +33,14 @@ public class AddressableImporter : AssetPostprocessor
                     if (entry != null)
                     {
                         entriesAdded.Add(entry);
-                        if (rule.HasLabel)
-                            Debug.LogFormat("[AddressableImporter] Entry created/updated for {0} with address {1} and labels {2}", assetPath, entry.address, string.Join(", ", entry.labels));
-                        else
-                            Debug.LogFormat("[AddressableImporter] Entry created/updated for {0} with address {1}", assetPath, entry.address);
+
+                        if (importSettings.logEntries)
+                        {
+                            if (rule.HasLabel)
+                                Debug.LogFormat("[AddressableImporter] Entry created/updated for {0} with address {1} and labels {2}", assetPath, entry.address, string.Join(", ", entry.labels));
+                            else
+                                Debug.LogFormat("[AddressableImporter] Entry created/updated for {0} with address {1}", assetPath, entry.address);
+                        }
                     }
                 }
             }
